@@ -20,6 +20,13 @@ namespace UserRegistration
             else
                 Console.WriteLine("LastName is INVALID !");
 
+            Console.WriteLine("Enter email :");
+            string Email = Console.ReadLine();
+            if (RegistrationPattern.ValidetingEmailAddress(Email))
+                Console.WriteLine("email is VALID !");
+            else
+                Console.WriteLine("email is INVALID !");
+
         }
     }
 

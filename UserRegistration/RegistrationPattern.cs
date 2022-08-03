@@ -11,7 +11,7 @@ namespace UserRegistration
         public static string FirstNameRegex = "^[A-Z]{1}[A-Za-z]{2,}$";
         public static string LastNameRegex = "^[A-Z]{1}[A-Za-z]{2,}$";
         public static string EmailRegex = "^[0-9a-zA-Z]+[.+-_]{0,1}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}";
-
+        public static string MobileFormatREGEX = "^[1-9]{1}[0-9]{1}[ ]{1}[1-9]{1}[0-9]{9}$";
         /// <summary>
         /// method for validating user firstName
         /// </summary>
@@ -30,9 +30,23 @@ namespace UserRegistration
         {
             return Regex.IsMatch(name, LastNameRegex);
         }
+        /// <summary>
+        /// method validating email address
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         public static bool ValidetingEmailAddress(string email)
         {
             return Regex.IsMatch(email, EmailRegex);
+        }
+        /// <summary>
+        /// method valideting Mobile Format
+        /// </summary>
+        /// <param name="mobile"></param>
+        /// <returns></returns>
+        public static bool ValidetingMobileFormat(string mobile)
+        {
+            return Regex.IsMatch(mobile, MobileFormatREGEX);
         }
     }
 }

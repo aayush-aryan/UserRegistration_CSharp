@@ -54,6 +54,13 @@ namespace UserRegistration
                 Console.WriteLine("Password is VALID !");
             else
                 Console.WriteLine("Password is INVALID !");
+
+            Console.WriteLine("Enter Rule4 PasswordFormat :");
+            string RuleFourthPasswordFormat = Console.ReadLine();
+            if (RegistrationPattern.ValidetingRuleFourthPasswordFormat(RuleFourthPasswordFormat))
+                Console.WriteLine("Password is VALID !");
+            else
+                Console.WriteLine("Password is INVALID !");
         }
     }
 

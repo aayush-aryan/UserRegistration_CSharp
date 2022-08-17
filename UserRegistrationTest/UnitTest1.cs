@@ -42,11 +42,15 @@ namespace UserRegistrationTest
             bool result = RegistrationPattern.ValidetingLastName("aryan");
             Assert.AreEqual(false, result);
         }
-
+        [DataRow("xyz@yl.co")]
+        [DataRow("bridge.co@co.com")]
+        [DataRow("bridge.co@bl.com")]
+        [DataRow("abc@yahoo.com")]
+        [DataRow("abc.xyz@bl.co")]
         [TestMethod]
-        public void Given_Email_Should_Returrns_True()
+        public void Given_Email_Should_Returrns_True(string email)
         {
-            bool result = RegistrationPattern.ValidetingEmailAddress("abc.xyz@bl.co.in");
+            bool result = RegistrationPattern.ValidetingEmailAddress(email);
             Assert.AreEqual(true, result);
         }
 
@@ -72,10 +76,12 @@ namespace UserRegistrationTest
             bool result = RegistrationPattern.ValidetingMobileFormat("1234567890");
             Assert.AreEqual(false, result);
         }
+        [DataRow("abc$1234")]
+        [DataRow("ABC@1234")]
         [TestMethod]
-        public void Given_Password_Should_Returrns_True()
+        public void Given_Password_Should_Returrns_True(string password)
         {
-            bool result = RegistrationPattern.ValidetingRuleFourthPasswordFormat("Xyz@1234");
+            bool result = RegistrationPattern.ValidetingRuleFourthPasswordFormat(password);
             Assert.AreEqual(true, result);
         }
         [TestMethod]

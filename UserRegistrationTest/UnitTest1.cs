@@ -42,6 +42,11 @@ namespace UserRegistrationTest
             bool result = RegistrationPattern.ValidetingLastName("aryan");
             Assert.AreEqual(false, result);
         }
+        /// <summary>
+        /// uc11
+        /// validating Multiple entry Paramerized Test
+        /// </summary>
+        /// <param name="email"></param>
         [DataRow("xyz@yl.co")]
         [DataRow("bridge.co@co.com")]
         [DataRow("bridge.co@bl.com")]

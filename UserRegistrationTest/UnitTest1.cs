@@ -13,8 +13,15 @@ namespace UserRegistrationTest
         [TestMethod]
         public void Given_First_Name_Should_Returrns_True()
         {
-            bool result = RegistrationPattern.ValidetingFirstName("Aayush");
-            Assert.AreEqual(true, result);
+            try
+            {
+                bool result = RegistrationPattern.ValidetingFirstName("Aayush");
+                Assert.AreEqual(true, result);
+            }
+            catch (UserRegistrationCustomException exception)
+            {
+                System.Console.WriteLine(exception.Message);
+            }
         }
         /// <summary>
         /// test method for checking false condition
@@ -22,8 +29,15 @@ namespace UserRegistrationTest
         [TestMethod]
         public void Given_First_Name_Should_Returrns_False()
         {
-            bool result = RegistrationPattern.ValidetingFirstName("aayush");
-            Assert.AreEqual(false, result);
+            try
+            {
+                bool result = RegistrationPattern.ValidetingFirstName("aayush");
+                Assert.AreEqual(false, result);
+            }
+            catch (UserRegistrationCustomException exception)
+            {
+                System.Console.WriteLine(exception.Message);
+            }
         }
         /// <summary>
         /// test cases for lastName;
@@ -32,15 +46,28 @@ namespace UserRegistrationTest
         [TestMethod]
         public void Given_Last_Name_Should_Returrns_True()
         {
-            bool result = RegistrationPattern.ValidetingLastName("Aryan");
-            Assert.AreEqual(true, result);
+            try
+            {
+                bool result = RegistrationPattern.ValidetingLastName("Aryan");
+                Assert.AreEqual(true, result);
+            }
+            catch (UserRegistrationCustomException exception)
+            {
+                System.Console.WriteLine(exception.Message);
+            }
         }
-
         [TestMethod]
         public void Given_Last_Name_Should_Returrns_False()
         {
-            bool result = RegistrationPattern.ValidetingLastName("aryan");
-            Assert.AreEqual(false, result);
+            try
+            {
+                bool result = RegistrationPattern.ValidetingLastName("aryan");
+                Assert.AreEqual(false, result);
+            }
+            catch (UserRegistrationCustomException exception)
+            {
+                System.Console.WriteLine(exception.Message);
+            }
         }
         /// <summary>
         /// uc11
@@ -55,15 +82,28 @@ namespace UserRegistrationTest
         [TestMethod]
         public void Given_Email_Should_Returrns_True(string email)
         {
-            bool result = RegistrationPattern.ValidetingEmailAddress(email);
-            Assert.AreEqual(true, result);
+            try
+            {
+                bool result = RegistrationPattern.ValidetingEmailAddress(email);
+                Assert.AreEqual(true, result);
+            }
+            catch (UserRegistrationCustomException exception)
+            {
+                System.Console.WriteLine(exception.Message);
+            }
         }
-
         [TestMethod]
         public void Given_Email_Should_Returrns_False()
         {
-            bool result = RegistrationPattern.ValidetingEmailAddress("abc.@gmail.com.com.com");
-            Assert.AreEqual(false, result);
+            try
+            {
+                bool result = RegistrationPattern.ValidetingEmailAddress("abc.@gmail.com.com.com");
+                Assert.AreEqual(false, result);
+            }
+            catch (UserRegistrationCustomException exception)
+            {
+                System.Console.WriteLine(exception.Message);
+            }
         }
         /// <summary>
         /// 
@@ -71,29 +111,56 @@ namespace UserRegistrationTest
         [TestMethod]
         public void Given_Mobile_Should_Returrns_True()
         {
-            bool result = RegistrationPattern.ValidetingMobileFormat("91 9999955555");
-            Assert.AreEqual(true, result);
+            try
+            {
+                bool result = RegistrationPattern.ValidetingMobileFormat("91 9999955555");
+                Assert.AreEqual(true, result);
+            }
+            catch (UserRegistrationCustomException exception)
+            {
+                System.Console.WriteLine(exception.Message);
+            }
         }
-
         [TestMethod]
         public void Given_Mobile_Should_Returrns_False()
         {
-            bool result = RegistrationPattern.ValidetingMobileFormat("1234567890");
-            Assert.AreEqual(false, result);
+            try
+            {
+                bool result = RegistrationPattern.ValidetingMobileFormat("1234567890");
+                Assert.AreEqual(false, result);
+            }
+            catch (UserRegistrationCustomException exception)
+            {
+                System.Console.WriteLine(exception.Message);
+            }
         }
         [DataRow("abc$1234")]
         [DataRow("ABC@1234")]
         [TestMethod]
         public void Given_Password_Should_Returrns_True(string password)
         {
-            bool result = RegistrationPattern.ValidetingRuleFourthPasswordFormat(password);
-            Assert.AreEqual(true, result);
+            try
+            {
+                bool result = RegistrationPattern.ValidetingRuleFourthPasswordFormat(password);
+                Assert.AreEqual(true, result);
+            }
+            catch (UserRegistrationCustomException exception)
+            {
+                System.Console.WriteLine(exception.Message);
+            }
         }
         [TestMethod]
         public void Given_Password_Should_Returrns_False()
         {
-            bool result = RegistrationPattern.ValidetingRuleFourthPasswordFormat("123452345");
-            Assert.AreEqual(false, result);
+            try
+            {
+                bool result = RegistrationPattern.ValidetingRuleFourthPasswordFormat("123452345");
+                Assert.AreEqual(false, result);
+            }
+            catch (UserRegistrationCustomException exception)
+            {
+                System.Console.WriteLine(exception.Message);
+            }
         }
 
 
